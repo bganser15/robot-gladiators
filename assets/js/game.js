@@ -1,3 +1,4 @@
+
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -7,7 +8,7 @@ var playerMoney = 10;
 console.log(playerName, playerAttack, playerHealth);
 
 //enemy names
-var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];                                    
 var enemyHealth = 50;
 var enemyAttack = 12;
 
@@ -26,7 +27,7 @@ var fight = function(enemyName) {
     //repeat and execute as long as enemy robot is alive
     while(enemyHealth > 0) {
         //asks player if they want to fight or skip
-        var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
+        var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."); {
         
             //if player choses to fight, fight
             if (promptFight === "fight" || promptFight === "FIGHT") { 
@@ -43,9 +44,8 @@ var fight = function(enemyName) {
                 // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `splayerHealth` variable.
                 playerHealth = playerHealth - enemyAttack;
                 // Log a resulting message to the console so we know that it worked.
-                console.log(
-                    enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
-                );
+                console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+                )
                 if (playerHealth <= 0) {
                     window.alert(playerName + " has died!");
                 }
@@ -72,12 +72,14 @@ var fight = function(enemyName) {
             }
         }
     }
-
-
-for(var i = 0; i <enemyNames.length; i++) {
-    fight(enemyNames[i]);
-
 }
+for(var i = 0; i < enemyNames.length; i++) {
+    var pickedEnemyName = enemyNames[i];
+    enemyHealth = 50;
+    fight(pickedEnemyName);
+    }
+
+
 
 //run fight to start the game over
 //fight();
